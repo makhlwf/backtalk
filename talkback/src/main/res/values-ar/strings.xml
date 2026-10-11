@@ -827,10 +827,6 @@
   <string name="title_pref_shortcut_fingerprint_left">التمرير لليمين على مستشعر بصمات الإصبع</string>
   <string name="title_pref_shortcut_fingerprint_right">التمرير لليسار على مستشعر بصمات الإصبع</string>
   <string name="title_pref_version_code">رمز الإصدار</string>
-  <string name="value_volume_100_percent" formatted="false">مطابقة مستوى صوت الكلام</string>
-  <string name="value_volume_75_percent" formatted="false">75% من مستوى صوت الكلام</string>
-  <string name="value_volume_50_percent" formatted="false">50% من مستوى صوت الكلام</string>
-  <string name="value_volume_25_percent" formatted="false">25% من مستوى صوت الكلام</string>
   <string formatted="false" name="value_volume_100_percent">مطابقة مستوى صوت الكلام</string>
   <string formatted="false" name="value_volume_75_percent">75% من مستوى صوت الكلام</string>
   <string formatted="false" name="value_volume_50_percent">50% من مستوى صوت الكلام</string>
