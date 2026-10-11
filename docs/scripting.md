@@ -1,6 +1,6 @@
 # Writing Backtalk scripts
 
-A script is a JavaScript file that changes how Backtalk works in one app, or in every app. This document describes the whole script API, version 1.
+A script is a JavaScript file that changes how Backtalk works in one app, or in every app. This document describes the whole script API, version 2.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -43,7 +43,7 @@ backtalk.onAppEnter(() => backtalk.speak('Hello from a script'));
 | `id` | Required. Lowercase letters, digits, dots, dashes and underscores, starting with a letter or digit, up to 64 characters. A script with the same id replaces the installed one. |
 | `name` | Required. Shown in the Scripts list, and at the start of the title of every dialog the script shows. |
 | `author` | Required. |
-| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 1. |
+| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 2, which adds `has` to [queries](#queries) and `activate` to [rules](#rules). |
 | `testedApiVersion` | Required. The highest script API version you tested with. Backtalk warns before installing a script tested only with an older version. |
 | `version` | The script's own version, as text. The default is `'1'`. |
 | `description` | Shown on the script's page and before it's installed. |
@@ -131,6 +131,7 @@ A rule can set any of these:
 | `group` | `true` reads the item and everything in it as one item. |
 | `readBefore`, `readAfter` | Moves the item in the reading order to just before or after another item, named by id or query. Use one, not both. |
 | `actions` | Items to add to the item's Actions menu. See below. |
+| `activate` | A [query](#queries) for the item inside it that a double-tap presses, such as the part of a grouped post that opens it. Needs script API version 2. |
 
 When several rules match an item, the first one that sets a field wins for that field. Rules from scripts for the app come before rules from scripts for all apps, and `backtalk.rules.add` comes before the manifest.
 
@@ -167,6 +168,7 @@ A query finds items. It's an id as text, or an object with any of these; an item
 | `clickable` | `true` or `false`. |
 | `parentId` | The view id of the item's parent. |
 | `inside` | A query that one of the items around it must match: its parent, the parent's parent, and so on. `{ className: 'Button', inside: { textContains: 'play video' } }` matches every button in a video's row, and not the row itself. `inside` can't hold another `inside`. |
+| `has` | A query that one of the items inside it must match, up to 6 levels down and 60 items. `{ parentId: 'results', has: { textContains: 'Subscribe to' } }` matches a row in a list that holds a Subscribe button. `has` can't hold `has` or `inside`. Needs script API version 2. |
 
 ## Items
 

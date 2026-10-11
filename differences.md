@@ -503,7 +503,7 @@ Like NVDA's app modules and global plugins, scripts change how Backtalk works in
 *   Change everything Backtalk says, and react to notifications, typing and screen changes.
 *   Use the internet and the clipboard, show dialogs, and keep its own data and settings.
 
-To install a script, go to **Advanced settings** > **Scripts** and choose **Import script**. Backtalk lists what the script asks to do before it installs or updates it. **Add the example script** adds a small script to start from.
+To install a script, go to **Advanced settings** > **Scripts** and choose **Import script**. You can also share a script file, or a link to one such as a script's page on GitHub, to Backtalk, or open a script file with it, and choose **Install Backtalk script**. Backtalk lists what the script asks to do before it installs or updates it. **Add the example script** adds a small script to start from.
 
 Each script has a page with an on and off switch, a switch for each permission and for each gesture, key, menu item and reading control it adds, its settings on their own screen, its log, and **Remove**. While a script runs, its gestures and keys come before Backtalk's.
 
